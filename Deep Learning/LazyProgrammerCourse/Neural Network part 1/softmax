@@ -20,8 +20,8 @@ print(answer.sum())
 A = np.random.randn(100, 5)
 expA = np.exp(A)
 
-# keep the rows equals to 1.
+# keep the rows (samples) equals to 1.
 answer = expA / expA.sum(axis=1, keepdims=True)
-print(answer.sum(axis=1))  # answeer, (100, )
+print(answer.sum(axis=1))  # answer, (100, 5)
 print(expA.sum(axis=1, keepdims=True))  # denominator, (100, 1)
 print(expA)  # (100, 5)
