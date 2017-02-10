@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 10 15:33:28 2017
+
+@author: wangbeanz
+"""
+
+# classifier on keras
+import numpy as np
+np.random.randn(10)
+from keras.datasets import mnist
+from kreeras.utils import np_utils
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+from keras.optimizers import RMSprop
+
+# downloading the mnist
+# X shape (60,000 28*28), y shape (10,000)
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# data pre-processing
+X_train = X_train.reshape(X_train.shape[0], -1) / 255  # normalize
+X_test = X_test.reshape(X_test.shape[0], -1) / 255  # normalize
+y_train = np_utils.to_categorical(y_train, nb_classes=10)
+y_test = np_utils.to_categorical(y_test, nb_classes=10)
+
+# Another way to build NN
+
+# Another way to define the optimizer
+
+# add merics
