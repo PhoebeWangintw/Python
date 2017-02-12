@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 12 12:39:01 2017
+
+@author: wangbeanz
+"""
+
+import numpy as np
+from numpy.random import shuffle
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.decomposition import PCA
+from sklearn import svm
+
+file = open('training.txt', 'r')
+lines = file.read().split()
+samples = []
+sample = []
+for line in lines[1:]:
+    if line != '+1':
+        line = line.split(":", 1)[1]
+        sample.append(float(line))
+    else:
+        for _ in range(3):
+            print(sample)
+            sample = sample + 0.05 * np.random.randn()  # adding noise
+            samples.append(sample)
+        samples.append(sample)
+        sample = []
+samples.append(sample)
+
+X = np.array(samples)
+X = shuffle(X)
+
+
