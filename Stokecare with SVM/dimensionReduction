@@ -5,7 +5,6 @@ Created on Sun Feb 12 12:39:01 2017
 
 @author: wangbeanz
 """
-
 import numpy as np
 from numpy.random import shuffle
 import matplotlib.pyplot as plt

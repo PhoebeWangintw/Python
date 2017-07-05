@@ -1,1 +1,0 @@
-These are some deep learning practice files from the course of lazyprogrammer from Udemy.
